@@ -1,0 +1,314 @@
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #fbfdff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+  --green: #16a34a;
+  --green-soft: #dcfce7;
+  --amber: #d97706;
+  --amber-soft: #fef3c7;
+  --red: #dc2626;
+  --red-soft: #fee2e2;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); }
+body { padding: 24px; }
+
+.page { min-height: 100vh; }
+.container { max-width: 1400px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.subtle {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.statusBadge,
+.softBadge {
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.statusBadge.success { background: var(--green-soft); color: var(--green); border-color: #bbf7d0; }
+.statusBadge.warning { background: var(--amber-soft); color: var(--amber); border-color: #fde68a; }
+.statusBadge.danger { background: var(--red-soft); color: var(--red); border-color: #fecaca; }
+
+.primaryButton {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  color: white;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.kpiCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.kpiCard.accent-green { background: linear-gradient(180deg, #ffffff 0%, #f6fff8 100%); }
+.kpiCard.accent-blue { background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%); }
+.kpiCard.accent-slate { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
+
+.kpiLabel {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.kpiValue {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.stack { display: grid; gap: 20px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.groupGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+}
+
+.groupCard {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.groupTitle {
+  margin-bottom: 14px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.field { margin-bottom: 12px; }
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.inputWrap { position: relative; }
+.input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: white;
+  border-radius: 12px;
+  padding: 11px 44px 11px 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.suffix {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.miniCard {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.miniCard span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.miniCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.chartWrap { width: 100%; height: 290px; margin-bottom: 14px; }
+.chartLarge { width: 100%; height: 340px; }
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTable th,
+.dataTable td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.dataTable th {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.logicGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.logicCard {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.logicCard span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.logicCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.printReport { display: none; }
+.printTitle { font-size: 28px; font-weight: 700; }
+.printMeta { margin-top: 4px; color: #475569; font-size: 13px; }
+.printKpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.printBox {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+}
+.printBox span {
+  display: block;
+  color: #475569;
+  font-size: 13px;
+}
+.printBox strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+@media (max-width: 1180px) {
+  .kpiGrid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .mainGrid, .bottomGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  body { padding: 14px; }
+  .title { font-size: 28px; }
+  .kpiGrid, .groupGrid, .miniGrid, .logicGrid, .printKpis { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .noPrint { display: none !important; }
+  .printReport { display: block; margin-bottom: 18px; }
+  .container { max-width: 100%; }
+  .kpiCard, .card, .miniCard, .logicCard {
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
